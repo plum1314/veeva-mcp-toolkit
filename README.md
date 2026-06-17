@@ -61,7 +61,7 @@ NEO4J_USER=neo4j
 NEO4J_PASSWORD=你的密码
 
 # ── MCP Server ──
-MCP_HOST=127.0.0.1
+MCP_HOST=0.0.0.0 (fit for deployment on render cloud)
 MCP_PORT=8000
 
 # ── PostgreSQL / PGVector（pgvector_ingest / pgvector_search 用）──
