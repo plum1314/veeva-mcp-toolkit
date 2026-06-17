@@ -18,7 +18,7 @@ class Config:
     NEO4J_PASSWORD: str = os.getenv("NEO4J_PASSWORD", "")
 
     # ── MCP Server (HTTP transport) ────────────
-    MCP_HOST: str = os.getenv("MCP_HOST", "127.0.0.1")
+    MCP_HOST: str = os.getenv("MCP_HOST", "0.0.0.0")
     MCP_PORT: int = int(os.getenv("MCP_PORT", "8000"))
 
     # ── PostgreSQL / PGVector ──────────────────

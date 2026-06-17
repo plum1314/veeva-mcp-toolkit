@@ -16,9 +16,10 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 from typing import Any
 
-from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
 
 
 
@@ -33,9 +34,7 @@ logger = logging.getLogger("langflow-mcp-server")
 
 # Create the FastMCP instance, bound to the configured host/port for HTTP.
 mcp = FastMCP(
-    name="langflow-neo4j-mcp",
-    host=config.MCP_HOST,
-    port=config.MCP_PORT,
+    name="langflow-neo4j-mcp"
 )
 
 
@@ -246,4 +245,10 @@ if __name__ == "__main__":
         config.MCP_PORT,
     )
     # Streamable HTTP transport (preferred over legacy SSE).
-    mcp.run(transport="streamable-http")
+
+
+    mcp.run(
+        transport="streamable-http", 
+        host=config.MCP_HOST, 
+        port=config.MCP_PORT, 
+        path="/mcp")
